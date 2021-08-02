@@ -5,15 +5,12 @@ import argparse
 import logging
 
 import pandas as pd
-
-from google.cloud import storage
-
 import apache_beam as beam
+from google.cloud import storage
 from apache_beam.io import ReadFromText
 from apache_beam.io import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
-
 
 def run(argv=None, save_main_session=True):
   parser = argparse.ArgumentParser()
