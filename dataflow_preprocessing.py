@@ -30,7 +30,7 @@ def run(argv=None, save_main_session=True):
                 p 
                 | beam.Create([known_args.input])
                 | beam.FlatMap(create_dataframe)
-             ) 
+                ) 
 
 def create_dataframe(readable_file):
     gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
