@@ -55,7 +55,7 @@ def run(argv=None, save_main_session=True):
 
     Count = ( NeighborhoodGroupBy
               | 'Count' >> beam.Map( lambda a : (a[0],len(a[1])))
-             )
+              )
 
     output = Count | beam.ParDo(TupToDict())
     output | 'Write to db' >> beam.io.WriteToBigQuery(
